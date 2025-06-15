@@ -1,0 +1,653 @@
+
+--- Campaign Started: 2025-06-09T10:15:05.319Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+
+--- Campaign Started: 2025-06-09T10:15:11.868Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+
+--- Campaign Started: 2025-06-09T10:15:35.792Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+
+--- Campaign Started: 2025-06-09T10:15:42.930Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+
+--- Campaign Started: 2025-06-09T10:15:43.830Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+
+--- Campaign Started: 2025-06-09T10:15:44.150Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+
+--- Campaign Started: 2025-06-09T10:19:38.531Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+
+--- Campaign Started: 2025-06-10T02:32:50.860Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T02:32:51.154Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Failed
+2025-06-10T02:32:52.416Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Failed
+--- Campaign Ended: 2025-06-10T02:32:53.417Z - Sent: 0, Failed: 2 ---
+
+--- Campaign Started: 2025-06-10T02:37:36.486Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T02:37:40.942Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T02:37:44.329Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T02:37:45.330Z - Sent: 2, Failed: 0 ---
+
+--- Campaign Started: 2025-06-10T02:43:41.804Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T02:43:45.334Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+
+--- Campaign Started: 2025-06-10T02:43:47.203Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T02:43:48.690Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T02:43:49.390Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T02:43:49.691Z - Sent: 2, Failed: 0 ---
+2025-06-10T02:43:52.636Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T02:43:53.637Z - Sent: 3, Failed: 0 ---
+
+--- Campaign Started: 2025-06-10T02:45:42.522Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T02:45:45.752Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T02:45:49.030Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T02:45:50.031Z - Sent: 2, Failed: 0 ---
+
+--- Campaign Started: 2025-06-10T03:27:56.669Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+
+--- Campaign Started: 2025-06-10T03:29:39.744Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T03:29:42.870Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+
+--- Campaign Started: 2025-06-10T03:29:48.105Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+
+--- Campaign Started: 2025-06-10T03:30:39.759Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+
+--- Campaign Started: 2025-06-10T03:31:03.372Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T03:31:10.254Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T03:31:10.747Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T03:31:10.921Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T03:31:11.025Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T03:31:11.748Z - Sent: 4, Failed: 0 ---
+2025-06-10T03:31:13.424Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T03:31:14.305Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T03:31:14.426Z - Sent: 6, Failed: 0 ---
+2025-06-10T03:31:14.435Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T03:31:15.305Z - Sent: 7, Failed: 0 ---
+--- Campaign Ended: 2025-06-10T03:31:15.436Z - Sent: 7, Failed: 0 ---
+
+--- Campaign Started: 2025-06-10T03:31:24.612Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T03:31:26.725Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T03:31:29.873Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T03:31:30.874Z - Sent: 2, Failed: 0 ---
+
+--- Campaign Started: 2025-06-10T03:34:00.372Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T03:34:03.303Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+
+--- Campaign Started: 2025-06-10T03:34:04.570Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T03:34:06.747Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T03:34:07.021Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T03:34:07.749Z - Sent: 2, Failed: 0 ---
+2025-06-10T03:34:10.138Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T03:34:11.139Z - Sent: 3, Failed: 0 ---
+
+--- Campaign Started: 2025-06-10T03:34:20.088Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T03:34:22.127Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T03:34:25.297Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T03:34:26.298Z - Sent: 2, Failed: 0 ---
+
+--- Campaign Started: 2025-06-10T03:35:06.559Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T03:35:08.851Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T03:35:12.115Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T03:35:13.117Z - Sent: 2, Failed: 0 ---
+
+--- Campaign Started: 2025-06-10T03:51:23.374Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T03:51:26.134Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T03:51:29.309Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T03:51:30.311Z - Sent: 2, Failed: 0 ---
+
+--- Campaign Started: 2025-06-10T03:58:11.739Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T03:58:14.699Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T03:58:17.920Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T03:58:18.921Z - Sent: 2, Failed: 0 ---
+
+--- Campaign Started: 2025-06-10T03:59:06.602Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T03:59:08.784Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T03:59:11.969Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T03:59:12.970Z - Sent: 2, Failed: 0 ---
+
+--- Campaign Started: 2025-06-10T03:59:15.926Z ---
+Subject: confirmation for #INV#
+Total Recipients: 2
+2025-06-10T03:59:18.035Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T03:59:21.215Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T03:59:22.216Z - Sent: 2, Failed: 0 ---
+
+--- Campaign Started: 2025-06-10T07:59:48.186Z ---
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+2025-06-10T07:59:51.914Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T07:59:55.002Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T07:59:56.003Z - Sent: 2, Failed: 0 ---
+
+--- Campaign Started: 2025-06-10T08:17:26.052Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.8.40)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T08:17:28.721Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+
+--- Campaign Started: 2025-06-10T08:17:30.693Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.5.2)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T08:17:31.863Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T08:17:32.734Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T08:17:33.019Z ---
+Duration: 7 seconds
+Success Rate: 100.00%
+Sent: 2, Failed: 0
+2025-06-10T08:17:35.796Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T08:17:36.949Z ---
+Duration: 6 seconds
+Success Rate: 150.00%
+Sent: 3, Failed: 0
+
+--- Campaign Started: 2025-06-10T08:24:18.164Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.8.40)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T08:24:21.082Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T08:24:24.150Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T08:24:25.309Z ---
+Duration: 7 seconds
+Success Rate: 100.00%
+Sent: 2, Failed: 0
+
+--- Campaign Started: 2025-06-10T08:26:19.918Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.8.40)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T08:26:22.107Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T08:26:25.116Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T08:26:26.267Z ---
+Duration: 6 seconds
+Success Rate: 100.00%
+Sent: 2, Failed: 0
+
+--- Campaign Started: 2025-06-10T09:06:35.957Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.6.35)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T09:06:39.043Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T09:06:42.109Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T09:06:43.267Z ---
+Duration: 7 seconds
+Success Rate: 100.00%
+Sent: 2, Failed: 0
+
+--- Campaign Started: 2025-06-10T09:11:43.344Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.6.35)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T09:11:46.155Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T09:11:49.184Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T09:11:50.341Z ---
+Duration: 7 seconds
+Success Rate: 100.00%
+Sent: 2, Failed: 0
+
+--- Campaign Started: 2025-06-10T09:12:41.833Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.6.35)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T09:12:43.954Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T09:12:47.052Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T09:12:48.210Z ---
+Duration: 6 seconds
+Success Rate: 100.00%
+Sent: 2, Failed: 0
+
+--- Campaign Started: 2025-06-10T09:37:47.615Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.1.3)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T09:37:50.552Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T09:37:53.570Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T09:37:54.729Z ---
+Duration: 7 seconds
+Success Rate: 100.00%
+Sent: 2, Failed: 0
+
+--- Campaign Started: 2025-06-10T09:44:51.818Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.5.2)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+
+--- Campaign Started: 2025-06-10T09:45:22.383Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.1.3)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+
+--- Campaign Started: 2025-06-10T09:46:34.266Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.8.40)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T09:46:37.452Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T09:46:40.760Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T09:46:41.925Z ---
+Duration: 8 seconds
+Success Rate: 100.00%
+Sent: 2, Failed: 0
+
+--- Campaign Started: 2025-06-10T09:47:54.689Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.3.31)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T09:47:57.179Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T09:48:00.556Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T09:48:01.705Z ---
+Duration: 7 seconds
+Success Rate: 100.00%
+Sent: 2, Failed: 0
+
+--- Campaign Started: 2025-06-10T09:54:53.428Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.5.2)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T09:54:56.092Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T09:54:59.418Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T09:55:00.568Z ---
+Duration: 7 seconds
+Success Rate: 100.00%
+Sent: 2, Failed: 0
+
+--- Campaign Started: 2025-06-10T13:09:52.967Z ---
+User: Pjdwsazzad (51.159.194.69, 10.84.8.40)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+
+--- Campaign Started: 2025-06-10T13:16:34.191Z ---
+User: Pjdwsazzad (51.159.194.69, 10.84.4.3)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+
+--- Campaign Started: 2025-06-10T13:16:35.310Z ---
+User: Pjdwsazzad (51.159.194.69, 10.84.4.3)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+
+--- Campaign Started: 2025-06-10T13:26:13.552Z ---
+User: Pjdwsazzad (51.159.194.69, 10.84.4.3)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T13:26:13.953Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Failed
+2025-06-10T13:26:15.291Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Failed
+--- Campaign Ended: 2025-06-10T13:26:16.466Z ---
+Duration: 3 seconds
+Success Rate: 0.00%
+Sent: 0, Failed: 0
+
+--- Campaign Started: 2025-06-10T13:27:05.795Z ---
+User: Pjdwsazzad (51.159.194.69, 10.84.4.3)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T13:27:06.172Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Failed
+2025-06-10T13:27:07.477Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Failed
+--- Campaign Ended: 2025-06-10T13:27:08.634Z ---
+Duration: 3 seconds
+Success Rate: 0.00%
+Sent: 0, Failed: 0
+
+--- Campaign Started: 2025-06-10T13:30:05.091Z ---
+User: Pjdwsazzad (51.159.194.69, 10.84.1.3)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T13:30:09.775Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T13:30:13.441Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T13:30:14.596Z ---
+Duration: 10 seconds
+Success Rate: 0.00%
+Sent: 0, Failed: 0
+
+--- Campaign Started: 2025-06-10T13:38:26.559Z ---
+User: Pjdwsazzad (51.159.194.69, 10.84.6.35)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T13:38:30.036Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T13:38:33.729Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T13:38:34.883Z ---
+Duration: 8 seconds
+Success Rate: 100.00%
+Sent: 2, Failed: 0
+
+--- Campaign Started: 2025-06-10T13:48:50.471Z ---
+User: Pjdwsazzad (51.159.194.69, 10.84.5.2)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 2
+SMTP Configs: 1
+2025-06-10T13:48:53.535Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+2025-06-10T13:48:57.136Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1 (sparksender1@alwaysdata.net), Status: Sent
+--- Campaign Ended: 2025-06-10T13:48:58.287Z ---
+Duration: 8 seconds
+Success Rate: 100.00%
+Sent: 2, Failed: 0
+
+--- Campaign Started: 2025-06-12T11:15:50.482Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.0.36)
+Subject: confirmation for #INV#
+Total Recipients: 17
+SMTP Configs: 1
+2025-06-12T11:15:53.317Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:15:53.318Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:15:53.318Z - To: ajaygoel999@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:15:53.318Z - To: test@ajaygoel.org, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:15:53.318Z - To: me@dropboxslideshow.com, From SMTP: SMTP_1, Status: Sent
+
+--- Campaign Started: 2025-06-12T11:22:29.790Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.0.35)
+Subject: confirmation for #INV#
+Total Recipients: 17
+SMTP Configs: 1
+2025-06-12T11:22:32.638Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:32.638Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:32.638Z - To: ajaygoel999@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:32.638Z - To: test@ajaygoel.org, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:32.638Z - To: me@dropboxslideshow.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:39.817Z - To: test@wordzen.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:39.818Z - To: rajgoel8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:39.818Z - To: rajanderson8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:39.818Z - To: rajwilson8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:39.818Z - To: briansmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:47.028Z - To: oliviasmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:47.028Z - To: ashsmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:47.028Z - To: shellysmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:47.028Z - To: ajay@madsciencekidz.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:47.028Z - To: ajay2@ctopowered.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:54.190Z - To: ajay@arena.tec.br, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:22:54.190Z - To: ajay@daustin.co, From SMTP: SMTP_1, Status: Sent
+--- Campaign Ended: 2025-06-12T11:22:54.337Z ---
+Duration: 25 seconds
+Success Rate: 100.00%
+Sent: 17, Failed: 0
+
+--- Campaign Started: 2025-06-12T11:23:05.845Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.3.31)
+Subject: order confirmation for invoice #INV#
+Total Recipients: 17
+SMTP Configs: 1
+2025-06-12T11:23:08.059Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:08.059Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:08.059Z - To: ajaygoel999@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:08.059Z - To: test@ajaygoel.org, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:08.059Z - To: me@dropboxslideshow.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:15.288Z - To: test@wordzen.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:15.288Z - To: rajgoel8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:15.288Z - To: rajanderson8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:15.288Z - To: rajwilson8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:15.288Z - To: briansmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:22.460Z - To: oliviasmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:22.460Z - To: ashsmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:22.460Z - To: shellysmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:22.460Z - To: ajay@madsciencekidz.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:22.460Z - To: ajay2@ctopowered.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:29.536Z - To: ajay@arena.tec.br, From SMTP: SMTP_1, Status: Sent
+2025-06-12T11:23:29.537Z - To: ajay@daustin.co, From SMTP: SMTP_1, Status: Sent
+--- Campaign Ended: 2025-06-12T11:23:29.683Z ---
+Duration: 24 seconds
+Success Rate: 100.00%
+Sent: 17, Failed: 0
+
+--- Campaign Started: 2025-06-12T13:26:26.617Z ---
+User: Pjdwsazzad (127.0.0.1)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 17
+SMTP Configs: 1
+2025-06-12T13:26:41.265Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:26:41.265Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:26:41.265Z - To: ajaygoel999@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:26:41.265Z - To: test@ajaygoel.org, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:26:41.265Z - To: me@dropboxslideshow.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:26:53.627Z - To: test@wordzen.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:26:53.627Z - To: rajgoel8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:26:53.627Z - To: rajanderson8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:26:53.627Z - To: rajwilson8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:26:53.627Z - To: briansmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:27:05.820Z - To: oliviasmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:27:05.820Z - To: ashsmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:27:05.820Z - To: shellysmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:27:05.820Z - To: ajay@madsciencekidz.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:27:05.820Z - To: ajay2@ctopowered.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:27:15.871Z - To: ajay@arena.tec.br, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:27:15.872Z - To: ajay@daustin.co, From SMTP: SMTP_1, Status: Sent
+--- Campaign Ended: 2025-06-12T13:27:16.082Z ---
+Duration: 50 seconds
+Success Rate: 100.00%
+Sent: 17, Failed: 0
+
+--- Campaign Started: 2025-06-12T13:32:49.988Z ---
+User: Pjdwsazzad (127.0.0.1)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 17
+SMTP Configs: 1
+2025-06-12T13:33:03.548Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:03.549Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:03.549Z - To: ajaygoel999@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:03.549Z - To: test@ajaygoel.org, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:03.549Z - To: me@dropboxslideshow.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:12.010Z - To: test@wordzen.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:12.011Z - To: rajgoel8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:12.011Z - To: rajanderson8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:12.011Z - To: rajwilson8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:12.011Z - To: briansmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:20.487Z - To: oliviasmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:20.487Z - To: ashsmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:20.487Z - To: shellysmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:20.487Z - To: ajay@madsciencekidz.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:20.487Z - To: ajay2@ctopowered.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:28.812Z - To: ajay@arena.tec.br, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:33:28.813Z - To: ajay@daustin.co, From SMTP: SMTP_1, Status: Sent
+--- Campaign Ended: 2025-06-12T13:33:29.014Z ---
+Duration: 39 seconds
+Success Rate: 100.00%
+Sent: 17, Failed: 0
+
+--- Campaign Started: 2025-06-12T13:44:35.935Z ---
+User: Pjdwsazzad (127.0.0.1)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 17
+SMTP Configs: 1
+2025-06-12T13:44:42.273Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:42.273Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:42.273Z - To: ajaygoel999@gmail.com, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:42.273Z - To: test@ajaygoel.org, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:42.273Z - To: me@dropboxslideshow.com, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:48.082Z - To: test@wordzen.com, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:48.083Z - To: rajgoel8477@gmail.com, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:48.083Z - To: rajanderson8477@gmail.com, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:48.083Z - To: rajwilson8477@gmail.com, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:48.083Z - To: briansmith8477@gmail.com, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:53.754Z - To: oliviasmith8477@gmail.com, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:53.754Z - To: ashsmith8477@gmail.com, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:53.754Z - To: shellysmith8477@gmail.com, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:53.754Z - To: ajay@madsciencekidz.com, From SMTP: SMTP_1, Status: Failed
+2025-06-12T13:44:53.754Z - To: ajay2@ctopowered.com, From SMTP: SMTP_1, Status: Failed
+
+--- Campaign Started: 2025-06-12T13:47:05.412Z ---
+User: Pjdwsazzad (127.0.0.1)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 17
+SMTP Configs: 1
+2025-06-12T13:47:19.075Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:19.075Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:19.075Z - To: ajaygoel999@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:19.075Z - To: test@ajaygoel.org, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:19.075Z - To: me@dropboxslideshow.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:27.827Z - To: test@wordzen.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:27.827Z - To: rajgoel8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:27.827Z - To: rajanderson8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:27.827Z - To: rajwilson8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:27.828Z - To: briansmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:36.484Z - To: oliviasmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:36.484Z - To: ashsmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:36.484Z - To: shellysmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:36.484Z - To: ajay@madsciencekidz.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:36.485Z - To: ajay2@ctopowered.com, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:45.184Z - To: ajay@arena.tec.br, From SMTP: SMTP_1, Status: Sent
+2025-06-12T13:47:45.185Z - To: ajay@daustin.co, From SMTP: SMTP_1, Status: Sent
+--- Campaign Ended: 2025-06-12T13:47:45.412Z ---
+Duration: 40 seconds
+Success Rate: 100.00%
+Sent: 17, Failed: 0
+
+--- Campaign Started: 2025-06-12T13:58:19.620Z ---
+User: Pjdwsazzad (127.0.0.1)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 17
+SMTP Configs: 1
+2025-06-12T13:58:35.154Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 12091ms
+2025-06-12T13:58:35.154Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 9582ms
+2025-06-12T13:58:35.154Z - To: ajaygoel999@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 11323ms
+2025-06-12T13:58:35.154Z - To: test@ajaygoel.org, From SMTP: SMTP_1, Status: Sent, Duration: 11186ms
+2025-06-12T13:58:35.154Z - To: me@dropboxslideshow.com, From SMTP: SMTP_1, Status: Sent, Duration: 9308ms
+2025-06-12T13:58:35.155Z - To: test@wordzen.com, From SMTP: SMTP_1, Status: Sent, Duration: 7406ms
+2025-06-12T13:58:35.155Z - To: rajgoel8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 10469ms
+2025-06-12T13:58:35.155Z - To: rajanderson8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 11382ms
+2025-06-12T13:58:35.155Z - To: rajwilson8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 10466ms
+2025-06-12T13:58:35.155Z - To: briansmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 12046ms
+2025-06-12T13:58:42.309Z - To: oliviasmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 4828ms
+2025-06-12T13:58:42.310Z - To: ashsmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 4843ms
+2025-06-12T13:58:42.310Z - To: shellysmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 4954ms
+2025-06-12T13:58:42.310Z - To: ajay@madsciencekidz.com, From SMTP: SMTP_1, Status: Sent, Duration: 4920ms
+2025-06-12T13:58:42.310Z - To: ajay2@ctopowered.com, From SMTP: SMTP_1, Status: Sent, Duration: 5472ms
+2025-06-12T13:58:42.310Z - To: ajay@arena.tec.br, From SMTP: SMTP_1, Status: Sent, Duration: 5945ms
+2025-06-12T13:58:42.310Z - To: ajay@daustin.co, From SMTP: SMTP_1, Status: Sent, Duration: 5072ms
+--- Campaign Ended: 2025-06-12T13:58:42.517Z ---
+Duration: 23 seconds
+Success Rate: 100.00%
+Sent: 17, Failed: 0
+
+--- Campaign Started: 2025-06-15T10:09:48.174Z ---
+User: Pjdwsazzad (127.0.0.1)
+Subject: Payment Confirmation for Invoice#INV#
+Total Recipients: 216
+SMTP Configs: 1
+2025-06-15T10:09:59.285Z - To: jaygoel999@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 6749ms
+2025-06-15T10:09:59.286Z - To: test@ajaygoel.org, From SMTP: SMTP_1, Status: Sent, Duration: 6498ms
+2025-06-15T10:09:59.286Z - To: me@dropboxslideshow.com, From SMTP: SMTP_1, Status: Sent, Duration: 7277ms
+2025-06-15T10:09:59.286Z - To: test@wordzen.com, From SMTP: SMTP_1, Status: Sent, Duration: 7592ms
+2025-06-15T10:09:59.286Z - To: rajgoel8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 7581ms
+⚡ Batch 1 completed | Sent: 5/5 | Total: 5/216 | Rate: 26/min | Failed: 0
+2025-06-15T10:10:04.700Z - To: rajanderson8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 3509ms
+2025-06-15T10:10:04.701Z - To: rajwilson8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 5411ms
+2025-06-15T10:10:04.701Z - To: briansmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 3447ms
+2025-06-15T10:10:04.701Z - To: oliviasmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 3714ms
+2025-06-15T10:10:04.701Z - To: ashsmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 3256ms
+⚡ Batch 2 completed | Sent: 5/5 | Total: 10/216 | Rate: 36/min | Failed: 0
+2025-06-15T10:10:08.623Z - To: shellysmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 3870ms
+2025-06-15T10:10:08.624Z - To: ajay@madsciencekidz.com, From SMTP: SMTP_1, Status: Sent, Duration: 3266ms
+2025-06-15T10:10:08.624Z - To: ajay2@ctopowered.com, From SMTP: SMTP_1, Status: Sent, Duration: 3917ms
+2025-06-15T10:10:08.624Z - To: ajay@arena.tec.br, From SMTP: SMTP_1, Status: Sent, Duration: 3696ms
+2025-06-15T10:10:08.624Z - To: ajay@daustin.com, From SMTP: SMTP_1, Status: Sent, Duration: 3631ms
+⚡ Batch 3 completed | Sent: 5/5 | Total: 15/216 | Rate: 44/min | Failed: 0
+2025-06-15T10:10:12.633Z - To: subrotopaul678@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 3524ms
+2025-06-15T10:10:12.634Z - To: darius.lineberry@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 3854ms
+2025-06-15T10:10:12.634Z - To: dariuspatrickpeek@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 4002ms
+2025-06-15T10:10:12.634Z - To: darkheartchicago@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 3928ms
+2025-06-15T10:10:12.634Z - To: darkar00@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 3773ms
+⚡ Batch 4 completed | Sent: 5/5 | Total: 20/216 | Rate: 49/min | Failed: 0
+
+--- Campaign Started: 2025-06-15T10:18:30.341Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.3.31)
+Subject: order confirmation for invoice #INV#
+Total Recipients: 32
+SMTP Configs: 1
+2025-06-15T10:18:32.908Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 2417ms
+2025-06-15T10:18:32.909Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 2435ms
+2025-06-15T10:18:32.909Z - To: ajaygoel999@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 2460ms
+2025-06-15T10:18:32.909Z - To: test@ajaygoel.org, From SMTP: SMTP_1, Status: Sent, Duration: 2433ms
+2025-06-15T10:18:32.909Z - To: me@dropboxslideshow.com, From SMTP: SMTP_1, Status: Sent, Duration: 2251ms
+⚡ Batch 1 completed | Sent: 5/5 | Total: 5/32 | Rate: 110/min | Failed: 02025-06-15T10:18:33.710Z - To: test@wordzen.com, From SMTP: SMTP_1, Status: Sent, Duration: 799ms
+2025-06-15T10:18:33.710Z - To: rajgoel8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 749ms
+2025-06-15T10:18:33.710Z - To: rajanderson8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 735ms
+2025-06-15T10:18:33.710Z - To: rajwilson8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 759ms
+2025-06-15T10:18:33.710Z - To: briansmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 735ms
+⚡ Batch 2 completed | Sent: 5/5 | Total: 10/32 | Rate: 170/min | Failed: 02025-06-15T10:18:37.526Z - To: oliviasmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 815ms
+2025-06-15T10:18:37.527Z - To: ashsmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 716ms
+2025-06-15T10:18:37.527Z - To: shellysmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 740ms
+2025-06-15T10:18:37.527Z - To: ajay@madsciencekidz.com, From SMTP: SMTP_1, Status: Sent, Duration: 716ms
+2025-06-15T10:18:37.527Z - To: ajay2@ctopowered.com, From SMTP: SMTP_1, Status: Sent, Duration: 715ms
+⚡ Batch 3 completed | Sent: 5/5 | Total: 15/32 | Rate: 122/min | Failed: 02025-06-15T10:18:41.317Z - To: ajay@arena.tec.br, From SMTP: SMTP_1, Status: Sent, Duration: 789ms
+2025-06-15T10:18:41.317Z - To: ajay@daustin.co, From SMTP: SMTP_1, Status: Sent, Duration: 719ms
+2025-06-15T10:18:41.317Z - To: ajaygoel999@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 735ms
+2025-06-15T10:18:41.317Z - To: test@ajaygoel.org, From SMTP: SMTP_1, Status: Sent, Duration: 714ms
+2025-06-15T10:18:41.317Z - To: me@dropboxslideshow.com, From SMTP: SMTP_1, Status: Sent, Duration: 725ms
+⚡ Batch 4 completed | Sent: 5/5 | Total: 20/32 | Rate: 108/min | Failed: 02025-06-15T10:18:45.108Z - To: test@wordzen.com, From SMTP: SMTP_1, Status: Sent, Duration: 788ms
+2025-06-15T10:18:45.108Z - To: rajgoel8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 747ms
+2025-06-15T10:18:45.108Z - To: rajanderson8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 727ms
+2025-06-15T10:18:45.108Z - To: rajwilson8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 731ms
+2025-06-15T10:18:45.108Z - To: briansmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 717ms
+⚡ Batch 5 completed | Sent: 5/5 | Total: 25/32 | Rate: 100/min | Failed: 02025-06-15T10:18:48.870Z - To: oliviasmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 758ms
+2025-06-15T10:18:48.871Z - To: ashsmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 708ms
+2025-06-15T10:18:48.871Z - To: shellysmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 728ms
+2025-06-15T10:18:48.871Z - To: ajay@madsciencekidz.com, From SMTP: SMTP_1, Status: Sent, Duration: 726ms
+2025-06-15T10:18:48.871Z - To: ajay2@ctopowered.com, From SMTP: SMTP_1, Status: Sent, Duration: 744ms
+⚡ Batch 6 completed | Sent: 5/5 | Total: 30/32 | Rate: 96/min | Failed: 02025-06-15T10:18:52.629Z - To: ajay@arena.tec.br, From SMTP: SMTP_1, Status: Sent, Duration: 755ms
+2025-06-15T10:18:52.629Z - To: ajay@daustin.co, From SMTP: SMTP_1, Status: Sent, Duration: 709ms
+⚡ Batch 7 completed | Sent: 2/2 | Total: 32/32 | Rate: 86/min | Failed: 0--- Campaign Ended: 2025-06-15T10:18:52.777Z ---
+Duration: 22 seconds
+Success Rate: 100.00%
+Sent: 32, Failed: 0

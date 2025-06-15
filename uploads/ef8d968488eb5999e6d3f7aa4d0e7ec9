@@ -1,0 +1,8 @@
+SMTP_HOST=smtp-sparksender1.alwaysdata.net
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=sparksender1@alwaysdata.net
+SMTP_PASS=Gte232555@#
+SMTP_FROM_NAME=
+FROM_EMAIL=sparksender1@alwaysdata.net
+

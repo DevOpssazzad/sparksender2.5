@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark Sender - Admin Panel</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .admin-header {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        .admin-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .admin-logo h1 {
+            color: #3b82f6;
+            font-size: 2rem;
+            margin: 0;
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+        .admin-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .user-info {
+            color: #9ca3af;
+        }
+        .card {
+            background: #374151;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .users-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .users-table th,
+        .users-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #4b5563;
+        }
+        .users-table th {
+            background-color: #4b5563;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .users-table td {
+            background-color: #374151;
+            color: #ffffff;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .btn-small {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+        }
+        .status-badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .status-active {
+            background-color: #10b981;
+            color: white;
+        }
+        .status-expired {
+            background-color: #ef4444;
+            color: white;
+        }
+        .status-admin {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: #374151;
+            margin: 15% auto;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            width: 90%;
+            max-width: 500px;
+        }
+        .close {
+            color: #9ca3af;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #ffffff;
+        }
+    </style>
+    <style>
+        /* Email Tracking Styles */
+        .tracking-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            background-color: #4B5563;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            width: 20%;
+        }
+
+        .stat-box h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #CBD5E0;
+        }
+
+        .tracking-table-container {
+            overflow-x: auto;
+        }
+
+        .tracking-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            border: 1px solid #4B5563;
+        }
+
+        .tracking-table th,
+        .tracking-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #4B5563;
+            border-right: 1px solid #4B5563;
+        }
+
+        .tracking-table th {
+            background-color: #4B5563;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .tracking-table td {
+            background-color: #374151;
+            color: #ffffff;
+        }
+
+        .status-sent {
+            background-color: #64748B; /* Gray */
+            color: white;
+        }
+
+        .status-opened {
+            background-color: #10B981; /* Green */
+            color: white;
+        }
+
+        .status-failed {
+            background-color: #EF4444; /* Red */
+            color: white;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+    </style>
+    <style>
+        /* Fixed Header Card Styles */
+        .card-header-fixed {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #4b5563;
+        }
+
+        .card-header-fixed h2 {
+            margin: 0;
+        }
+
+        .card-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .card-content-scrollable {
+            max-height: 400px; /* Adjust as needed */
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; width: 100%; box-sizing: border-box;">
+    <div class="admin-header">
+        <div class="container">
+            <div class="admin-logo">
+                <h1>⚡ SPARK SENDER ADMIN</h1>
+            </div>
+            <div class="admin-controls">
+                <span class="user-info">Welcome, <span id="currentUser"></span></span>
+                <button class="btn btn-red" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Add User Form -->
+        <div class="card">
+            <h2>👤 Add New User</h2>
+            <form id="addUserForm">
+                <div class="form-grid">
+                    <div>
+                        <label class="form-label">Username</label>
+                        <input type="text" name="username" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Validity Start</label>
+                        <input type="date" name="validity_start" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Validity End</label>
+                        <input type="date" name="validity_end" class="form-input" required>
+                    </div>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; color: #ffffff;">
+                        <input type="checkbox" name="is_admin" style="margin: 0;">
+                        Admin User
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-green">Add User</button>
+            </form>
+        </div>
+
+        <!-- Users List -->
+        <div class="card">
+            <h2>👥 User Management</h2>
+            <div id="messageDiv" style="display: none; margin-bottom: 1rem;"></div>
+            <table class="users-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Validity Start</th>
+                        <th>Validity End</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                    <!-- Users will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Online Users -->
+        <div class="card">
+            <h2>🟢 Online Users</h2>
+            <div id="onlineUsersContainer">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Status</th>
+                            <th>Last Activity</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="onlineUsersBody">
+                        <!-- Online users will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- All Users Status -->
+        <div class="card">
+            <h2>📈 All Users Status</h2>
+            <div style="margin-bottom: 1rem;">
+                <button class="btn btn-blue btn-small" onclick="loadAllUsersStatus()">Refresh Status</button>
+                <select id="statusFilter" onchange="filterUsersByStatus()" style="margin-left: 1rem; padding: 0.5rem;">
+                    <option value="">All Users</option>
+                    <option value="online">Online Only</option>
+                    <option value="offline">Offline Only</option>
+                </select>
+            </div>
+            <div id="allUsersContainer">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Status</th>
+                            <th>Last Activity</th>
+                            <th>Campaign Count</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="allUsersBody">
+                        <!-- All users will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Campaign Logs -->
+        <div class="card">
+            <div class="card-header-fixed">
+                <h2>🚀 Campaign Activity Logs</h2>
+                <div class="card-header-controls">
+                    <button class="btn btn-blue btn-small" onclick="loadCampaignLogs()">Refresh Campaign Logs</button>
+                    <select id="campaignFilter" onchange="filterCampaignLogs()" style="padding: 0.5rem;">
+                        <option value="">All Campaign Activities</option>
+                        <option value="campaign_start">Campaign Start</option>
+                        <option value="campaign_end">Campaign End</option>
+                        <option value="campaign_pause">Campaign Pause</option>
+                        <option value="campaign_resume">Campaign Resume</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-content-scrollable">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Activity</th>
+                            <th>Campaign Details</th>
+                            <th>Date</th>
+                            <th>Performance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="campaignLogsBody">
+                        <!-- Campaign logs will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Activity Logs -->
+        <div class="card">
+            <div class="card-header-fixed">
+                <h2>📊 User Activity Logs</h2>
+                <div class="card-header-controls">
+                    <button class="btn btn-blue btn-small" onclick="loadActivities()">Refresh Logs</button>
+                    <select id="activityFilter" onchange="filterActivities()" style="padding: 0.5rem;">
+                        <option value="">All Activities</option>
+                        <option value="login">Login</option>
+                        <option value="logout">Logout</option>
+                        <option value="email_campaign">Email Campaign</option>
+                        <option value="campaign_start">Campaign Start</option>
+                        <option value="campaign_end">Campaign End</option>
+                        <option value="campaign_pause">Campaign Pause</option>
+                        <option value="campaign_resume">Campaign Resume</option>
+                        <option value="admin_action">Admin Action</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-content-scrollable">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Username</th>
+                            <th>Activity</th>
+                            <th>Description</th>
+                            <th>IP Address</th>
+                            <th>User Agent</th>
+                        </tr>
+                    </thead>
+                    <tbody id="activitiesBody">
+                        <!-- Activities will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit User Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2 style="color: #ffffff; margin-top: 0;">Edit User</h2>
+            <form id="editUserForm">
+                <input type="hidden" id="editUserId">
+                <div class="form-grid">
+                    <div>
+                        <label class="form-label">Username</label>
+                        <input type="text" id="editUsername" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label">New Password (optional)</label>
+                        <input type="password" id="editPassword" class="form-input">
+                    </div>
+                    <div>
+                        <label class="form-label">Validity Start</label>
+                        <input type="date" id="editValidityStart" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Validity End</label>
+                        <input type="date" id="editValidityEnd" class="form-input" required>
+                    </div>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; color: #ffffff;">
+                        <input type="checkbox" id="editIsAdmin" style="margin: 0;">
+                        Admin User
+                    </label>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button type="submit" class="btn btn-blue">Update User</button>
+                    <button type="button" class="btn btn-gray" onclick="closeEditModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Email Tracking Section -->
+    <div class="container">
+        <div class="card">
+            <div class="tab-content" id="emailTracking">
+                    <h3>📧 Email Tracking Dashboard</h3>
+
+                    <div class="controls" style="margin-bottom: 20px;">
+                        <button onclick="refreshTrackingData()" class="btn btn-primary">🔄 Refresh Data</button>
+                        <select id="trackingFilter" onchange="filterTrackingData()" class="form-control" style="width: 200px; display: inline-block; margin-left: 10px;">
+                            <option value="all">All Status</option>
+                            <option value="sent">Sent Only</option>
+                            <option value="opened">Opened Only</option>
+                            <option value="failed">Failed Only</option>
+                        </select>
+                    </div>
+
+                    <div id="trackingStats" class="tracking-stats">
+                        <div class="stat-box">
+                            <h4>Total Sent</h4>
+                            <div id="adminTotalSent">0</div>
+                        </div>
+                        <div class="stat-box">
+                            <h4>Total Opened</h4>
+                            <div id="adminTotalOpened">0</div>
+                        </div>
+                        <div class="stat-box">
+                            <h4>Open Rate</h4>
+                            <div id="adminOpenRate">0%</div>
+                        </div>
+                        <div class="stat-box">
+                            <h4>Total Opens</h4>
+                            <div id="adminTotalOpens">0</div>
+                        </div>
+                        <div class="stat-box">
+                            <h4>Failed</h4>
+                            <div id="adminTotalFailed">0</div>
+                        </div>
+                    </div>
+
+                    <div class="tracking-table-container">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h4>Email Tracking Details</h4>
+                            <span id="trackingCount" class="text-muted">Showing 0 records</span>
+                        </div>
+                        <table class="tracking-table">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Recipient</th>
+                                    <th>Subject</th>
+                                    <th>Status</th>
+                                    <th>Sent At</th>
+                                    <th>Opened At</th>
+                                    <th>Opens</th>
+                                    <th>SMTP</th>
+                                    <th>Campaign ID</th>
+                                    <th>IP Address</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminEmailTrackingTable">
+                                <tr>
+                                    <td colspan="10">Loading tracking data...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <script>
+        const token = localStorage.getItem('token');
+        if (!token) {
+            window.location.href = '/login.html';
+        }
+
+
+
+        let allActivities = [];
+        let allUsers = [];
+        let campaignLogs = [];
+
+        // Load users on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadUsers();
+            loadCurrentUser();
+            loadOnlineUsers();
+            loadAllUsersStatus();
+            loadActivities();
+            loadCampaignLogs();
+
+            // Auto-refresh every 30 seconds
+            setInterval(() => {
+                loadOnlineUsers();
+                loadAllUsersStatus();
+                loadActivities();
+                loadCampaignLogs();
+            }, 30000);
+
+            loadAdminEmailTracking();
+
+            // Auto-refresh tracking data every 15 seconds for more real-time updates
+            setInterval(loadAdminEmailTracking, 15000);
+
+            // Add WebSocket listener for real-time email open notifications
+            try {
+                const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+                const wsUrl = `${protocol}://${window.location.hostname}:${window.location.port}`;
+                const adminWs = new WebSocket(wsUrl);
+                
+                adminWs.addEventListener('message', (event) => {
+                    try {
+                        const data = JSON.parse(event.data);
+                        if (data.message && data.message.includes('Email opened:')) {
+                            // Show notification and refresh data
+                            console.log('📧 Real-time email open detected:', data.message);
+                            loadAdminEmailTracking();
+                        }
+                    } catch (e) {
+                        // Handle non-JSON messages
+                    }
+                });
+
+                adminWs.addEventListener('open', () => {
+                    console.log('🔗 Admin WebSocket connected for real-time tracking');
+                });
+
+                adminWs.addEventListener('error', (error) => {
+                    console.log('❌ Admin WebSocket error:', error);
+                });
+            } catch (error) {
+                console.log('⚠️ Could not establish WebSocket connection for real-time updates');
+            }
+
+            // Add ESC key handler for modals
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    const editModal = document.getElementById('editModal');
+                    const campaignModal = document.getElementById('campaignModal');
+
+                    if (editModal && editModal.style.display === 'block') {
+                        closeEditModal();
+                    }
+
+                    if (campaignModal) {
+                        closeCampaignModal();
+                    }
+                }
+            });
+        });
+
+        async function loadCurrentUser() {
+            // For now, just show "Admin" - you could decode the JWT to get the username
+            document.getElementById('currentUser').textContent = 'Admin';
+        }
+
+        async function loadUsers() {
+            try {
+                const authHeaders = getAuthHeaders();
+                if (!authHeaders) return;
+
+                const response = await fetch('/admin/users', {
+                    headers: authHeaders
+                });
+
+                if (response.status === 401) {
+                    localStorage.removeItem('token');
+                    window.location.href = '/login.html';
+                    return;
+                }
+
+                if (response.ok) {
+                    const users = await response.json();
+                    displayUsers(users);
+                } else {
+                    showMessage('Failed to load users', 'error');
+                }
+            } catch (error) {
+                showMessage('Error loading users', 'error');
+            }
+        }
+
+        function displayUsers(users) {
+            const tbody = document.getElementById('usersTableBody');
+            tbody.innerHTML = '';
+
+            users.forEach(user => {
+                const row = document.createElement('tr');
+                const now = new Date();
+                const validityEnd = new Date(user.validity_end);
+                const isExpired = validityEnd < now;
+                const isAdmin = user.is_admin;
+
+                let statusBadge = '';
+                if (isAdmin) {
+                    statusBadge = '<span class="status-badge status-admin">Admin</span>';
+                } else if (isExpired) {
+                    statusBadge = '<span class="status-badge status-expired">Expired</span>';
+                } else {
+                    statusBadge = '<span class="status-badge status-active">Active</span>';
+                }
+
+                row.innerHTML = `
+                    <td>${user._id || user.id}</td>
+                    <td>${user.username}</td>
+                    <td>${new Date(user.validity_start).toLocaleDateString()}</td>
+                    <td>${new Date(user.validity_end).toLocaleDateString()}</td>
+                    <td>${statusBadge}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn btn-blue btn-small" onclick="editUser('${user._id || user.id}')">Edit</button>
+                            <button class="btn btn-red btn-small" onclick="deleteUser('${user._id || user.id}', '${user.username}')">Delete</button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Add user form submission
+        document.getElementById('addUserForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const authHeaders = getAuthHeaders();
+            if (!authHeaders) return;
+
+            const formData = new FormData(e.target);
+            const userData = {
+                username: formData.get('username'),
+                password: formData.get('password'),
+                validity_start: formData.get('validity_start'),
+                validity_end: formData.get('validity_end'),
+                is_admin: formData.get('is_admin') === 'on'
+            };
+
+            try {
+                const response = await fetch('/admin/users', {
+                    method: 'POST',
+                    headers: authHeaders,
+                    body: JSON.stringify(userData)
+                });
+
+                if (response.status === 401) {
+                    localStorage.removeItem('token');
+                    window.location.href = '/login.html';
+                    return;
+                }
+
+                if (response.ok) {
+                    showMessage('User created successfully', 'success');
+                    e.target.reset();
+                    loadUsers();
+                } else {
+                    const errorText = await response.text();
+                    showMessage(errorText || 'Failed to create user', 'error');
+                }
+            } catch (error) {
+                showMessage('Error creating user', 'error');
+            }
+        });
+
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('messageDiv');
+            messageDiv.className = type === 'success' ? 'success-message' : 'error-message';
+            messageDiv.textContent = message;
+            messageDiv.style.display = 'block';
+
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 3000);
+        }
+
+        async function editUser(userId) {
+            try {
+                const authHeaders = getAuthHeaders();
+                if (!authHeaders) return;
+
+                const response = await fetch('/admin/users', {
+                    headers: authHeaders
+                });
+
+                if (response.status === 401) {
+                    localStorage.removeItem('token');
+                    window.location.href = '/login.html';
+                    return;
+                }
+
+                if (response.ok) {
+                    const users = await response.json();
+                    const user = users.find(u => (u._id || u.id) === userId);
+
+                    if (user) {
+                        document.getElementById('editUserId').value = user._id || user.id;
+                        document.getElementById('editUsername').value = user.username;
+                        document.getElementById('editValidityStart').value = user.validity_start;
+                        document.getElementById('editValidityEnd').value = user.validity_end;
+                        document.getElementById('editIsAdmin').checked = user.is_admin;
+                        document.getElementById('editModal').style.display = 'block';
+                    }
+                } else {
+                    showMessage('Failed to load user details', 'error');
+                }
+            } catch (error) {
+                showMessage('Error loading user details', 'error');
+            }
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
+
+        // Edit user form submission
+        document.getElementById('editUserForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const authHeaders = getAuthHeaders();
+            if (!authHeaders) return;
+
+            const userId = document.getElementById('editUserId').value;
+            const userData = {
+                username: document.getElementById('editUsername').value,
+                validity_start: document.getElementById('editValidityStart').value,
+                validity_end: document.getElementById('editValidityEnd').value,
+                is_admin: document.getElementById('editIsAdmin').checked
+            };
+
+            const password = document.getElementById('editPassword').value;
+            if (password) {
+                userData.password = password;
+            }
+
+            try {
+                const response = await fetch(`/admin/users/${userId}`, {
+                    method: 'PUT',
+                    headers: authHeaders,
+                    body: JSON.stringify(userData)
+                });
+
+                if (response.status === 401) {
+                    localStorage.removeItem('token');
+                    window.location.href = '/login.html';
+                    return;
+                }
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showMessage('User updated successfully', 'success');
+                    closeEditModal();
+                    loadUsers();
+                } else {
+                    showMessage(result.message || 'Failed to update user', 'error');
+                }
+            } catch (error) {
+                showMessage('Error updating user', 'error');
+            }
+        });
+
+        async function deleteUser(userId, username) {
+            if (confirm(`Are you sure you want to delete user "${username}"?`)) {
+                try {
+                    const authHeaders = getAuthHeaders();
+                    if (!authHeaders) return;
+
+                    const response = await fetch(`/admin/users/${userId}`, {
+                        method: 'DELETE',
+                        headers: authHeaders
+                    });
+
+                    if (response.status === 401) {
+                        localStorage.removeItem('token');
+                        window.location.href = '/login.html';
+                        return;
+                    }
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        showMessage('User deleted successfully', 'success');
+                        loadUsers();
+                    } else {
+                        showMessage(result.message || 'Failed to delete user', 'error');
+                    }
+                } catch (error) {
+                    showMessage('Error deleting user', 'error');
+                }
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            window.location.href = '/login.html';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const editModal = document.getElementById('editModal');
+            const campaignModal = document.getElementById('campaignModal');
+
+            if (event.target === editModal) {
+                editModal.style.display = 'none';
+            }
+
+            if (event.target === campaignModal) {
+                closeCampaignModal();
+            }
+        }
+
+        function getAuthHeaders() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = '/login.html';
+                return null;
+            }
+
+            return {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            };
+        }
+
+        async function loadOnlineUsers() {
+            try {
+                const authHeaders = getAuthHeaders();
+                if (!authHeaders) return;
+
+                const response = await fetch('/admin/online-users', {
+                    headers: authHeaders
+                });
+
+                if (response.status === 401) {
+                    localStorage.removeItem('token');
+                    window.location.href = '/login.html';
+                    return;
+                }
+
+                if (response.ok) {
+                    const onlineUsers = await response.json();
+                    displayOnlineUsers(onlineUsers);
+                }
+            } catch (error) {
+                console.error('Error loading online users:', error);
+            }
+        }
+
+        async function loadAllUsersStatus() {
+            try {
+                const authHeaders = getAuthHeaders();
+                if (!authHeaders) return;
+
+                const response = await fetch('/admin/users-status', {
+                    headers: authHeaders
+                });
+
+                if (response.status === 401) {
+                    localStorage.removeItem('token');
+                    window.location.href = '/login.html';
+                    return;
+                }
+
+                if (response.ok) {
+                    allUsers = await response.json();
+                    displayAllUsers(allUsers);
+                }
+            } catch (error) {
+                console.error('Error loading all users status:', error);
+            }
+        }
+
+        function displayAllUsers(users) {
+            const tbody = document.getElementById('allUsersBody');
+            tbody.innerHTML = '';
+
+            if (users.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: #9ca3af;">No users found</td></tr>';
+                return;
+            }
+
+            users.forEach(user => {
+                const row = document.createElement('tr');
+                const lastActivity = user.last_activity ? new Date(user.last_activity).toLocaleString() : 'Never';
+                const statusBadge = user.status === 'online' ? 
+                    '<span class="status-badge status-active">Online</span>' : 
+                    '<span class="status-badge status-expired">Offline</span>';
+
+                row.innerHTML = `
+                    <td>${user.username}</td>
+                    <td>${statusBadge}</td>
+                    <td>${lastActivity}</td>
+                    <td>${user.campaign_count || 0}</td>
+                    <td>
+                        <button class="btn btn-blue btn-small" onclick="viewUserActivities('${user._id}', '${user.username}')">View Activities</button>
+                        <button class="btn btn-green btn-small" onclick="viewUserCampaigns('${user._id}', '${user.username}')">View Campaigns</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Load campaign logs
+        async function loadCampaignLogs() {
+            try {
+                const authHeaders = getAuthHeaders();
+                if (!authHeaders) return;
+
+                const response = await fetch('/admin/campaign-logs', {
+                    headers: authHeaders
+                });
+
+                if (response.status === 401) {
+                    localStorage.removeItem('token');
+                    window.location.href = '/login.html';
+                    return;
+                }
+
+                if (response.ok) {
+                    campaignLogs = await response.json();
+                    displayCampaignLogs(campaignLogs);
+                }
+            } catch (error) {
+                console.error('Error loading campaign logs:', error);
+            }
+        }
+
+        function displayCampaignLogs(logs) {
+            const tbody = document.getElementById('campaignLogsBody');
+            tbody.innerHTML = '';
+
+            if (logs.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: #9ca3af;">No campaign logs found</td></tr>';
+                return;
+            }
+
+            logs.forEach(log => {
+                const row = document.createElement('tr');
+                const activityBadge = getCampaignActivityBadge(log.activity_type);
+                const campaignDetails = log.campaign_details || {};
+                const metadata = log.metadata || {};
+
+                let performanceInfo = '';
+                if (log.activity_type === 'campaign_end') {
+                    performanceInfo = `
+                        Success: ${metadata.success_rate || 'N/A'}<br>
+                        Speed: ${metadata.emails_per_minute || 0}/min
+                    `;
+                } else if (campaignDetails.recipients_count) {
+                    performanceInfo = `Recipients: ${campaignDetails.recipients_count}`;
+                }
+
+                row.innerHTML = `
+                    <td>${log.username}</td>
+                    <td>${activityBadge}</td>
+                    <td>
+                        <strong>${campaignDetails.subject || 'N/A'}</strong><br>
+                        <small>Sent: ${campaignDetails.emails_sent || 0} | Failed: ${campaignDetails.emails_failed || 0}</small>
+                    </td>
+                    <td>${new Date(log.created_at).toLocaleString()}</td>
+                    <td><small>${performanceInfo}</small></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function getCampaignActivityBadge(activityType) {
+            switch(activityType) {
+                case 'campaign_start':
+                    return '<span class="status-badge status-active">Started</span>';
+                case 'campaign_end':
+                    return '<span class="status-badge status-admin">Completed</span>';
+                case 'campaign_pause':
+                    return '<span class="status-badge status-expired">Paused</span>';
+                case 'campaign_resume':
+                    return '<span class="status-badge status-active">Resumed</span>';
+                default:
+                    return '<span class="status-badge">Campaign</span>';
+            }
+        }
+
+        function filterUsersByStatus() {
+            const filter = document.getElementById('statusFilter').value;
+            const filteredUsers = filter ? allUsers.filter(user => user.status === filter) : allUsers;
+            displayAllUsers(filteredUsers);
+        }
+
+        function filterCampaignLogs() {
+            const filter = document.getElementById('campaignFilter').value;
+            const filteredLogs = filter ? campaignLogs.filter(log => log.activity_type === filter) : campaignLogs;
+            displayCampaignLogs(filteredLogs);
+        }
+
+        async function viewUserCampaigns(userId, username) {
+            try {
+                const authHeaders = getAuthHeaders();
+                if (!authHeaders) return;
+
+                const response = await fetch(`/admin/user/${userId}/campaigns`, {
+                    headers: authHeaders
+                });
+
+                if (response.ok) {
+                    const campaigns = await response.json();
+                    showCampaignModal(username, campaigns);
+                }
+            } catch (error) {
+                console.error('Error loading user campaigns:', error);
+            }
+        }
+
+        function showCampaignModal(username, campaigns) {
+            // Create modal HTML with proper structure
+            const modalHtml = `
+                <div id="campaignModal" class="modal" style="display: block;">
+                    <div class="modal-content" style="max-width: 90%; width: 800px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="color: #ffffff; margin: 0;">📊 Campaign History for ${username}</h3>
+                            <span class="close" onclick="closeCampaignModal()" style="font-size: 24px; cursor: pointer; color: #9ca3af;">&times;</span>
+                        </div>
+                        <div style="max-height: 500px; overflow-y: auto;">
+                            <table class="users-table">
+                                <thead>
+                                    <tr>
+                                        <th>Activity</th>
+                                        <th>Subject</th>
+                                        <th>Recipients</th>
+                                        <th>Success Rate</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${generateCampaignRows(campaigns)}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="margin-top: 1.5rem; text-align: center;">
+                            <button class="btn btn-blue" onclick="closeCampaignModal()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+        }
+
+        function generateCampaignRows(campaigns) {
+            if (campaigns.length === 0) {
+                return '<tr><td colspan="5" style="text-align: center; color: #9ca3af;">No campaigns found for this user</td></tr>';
+            }
+
+            return campaigns.map(campaign => {
+                const details = campaign.campaign_details || {};
+                const successRate = details.emails_sent && details.recipients_count ? 
+                    ((details.emails_sent / details.recipients_count) * 100).toFixed(2) + '%' : 'N/A';
+
+                return `
+                    <tr>
+                        <td>${getCampaignActivityBadge(campaign.activity_type)}</td>
+                        <td title="${details.subject || 'N/A'}">${details.subject ? (details.subject.length > 40 ? details.subject.substring(0, 40) + '...' : details.subject) : 'N/A'}</td>
+                        <td><strong>${details.recipients_count || 0}</strong></td>
+                        <td><strong style="color: ${successRate !== 'N/A' && parseFloat(successRate) > 80 ? '#10b981' : successRate !== 'N/A' && parseFloat(successRate) > 50 ? '#f59e0b' : '#ef4444'}">${successRate}</strong></td>
+                        <td>${new Date(campaign.created_at).toLocaleString()}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function closeCampaignModal() {
+            const modal = document.getElementById('campaignModal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        function displayOnlineUsers(users) {
+            const tbody = document.getElementById('onlineUsersBody');
+            tbody.innerHTML = '';
+
+            if (users.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: #9ca3af;">No users currently online</td></tr>';
+                return;
+            }
+
+            users.forEach(user => {
+                const row = document.createElement('tr');
+                const lastActivity = user.last_activity ? new Date(user.last_activity).toLocaleString() : 'Unknown';
+
+                row.innerHTML = `
+                    <td>${user.username}</td>
+                    <td><span class="status-badge status-active">Online</span></td>
+                    <td>${lastActivity}</td>
+                    <td>
+                        <button class="btn btn-blue btn-small" onclick="viewUserActivities('${user._id}', '${user.username}')">View Activities</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        async function loadActivities() {
+            try {
+                const authHeaders = getAuthHeaders();
+                if (!authHeaders) return;
+
+                const response= await fetch('/admin/activities', {
+                    headers: authHeaders
+                });
+
+                if (response.status === 401) {
+                    localStorage.removeItem('token');
+                    window.location.href = '/login.html';
+                    return;
+                }
+
+                if (response.ok) {
+                    allActivities = await response.json();
+                    displayActivities(allActivities);
+                }
+            } catch (error) {
+                console.error('Error loading activities:', error);
+            }
+        }
+
+        function displayActivities(activities) {
+            const tbody = document.getElementById('activitiesBody');
+            tbody.innerHTML = '';
+
+            if (activities.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: #9ca3af;">No activities found</td></tr>';
+                return;
+            }
+
+            activities.forEach(activity => {
+                const row = document.createElement('tr');
+                const timestamp = new Date(activity.created_at).toLocaleString();
+                const userAgent = activity.user_agent ? activity.user_agent.substring(0, 50) + '...' : 'Unknown';
+
+                let activityBadge = '';
+                switch(activity.activity_type) {
+                    case 'login':
+                        activityBadge = '<span class="status-badge status-active">Login</span>';
+                        break;
+                    case 'logout':
+                        activityBadge = '<span class="status-badge status-expired">Logout</span>';
+                        break;
+                    case 'email_campaign':
+                        activityBadge = '<span class="status-badge status-admin">Email Campaign</span>';
+                        break;
+                    case 'admin_action':
+                        activityBadge = '<span class="status-badge status-admin">Admin Action</span>';
+                        break;
+                    default:
+                        activityBadge = '<span class="status-badge" style="background-color: #6b7280;">Other</span>';
+                }
+
+                row.innerHTML = `
+                    <td>${timestamp}</td>
+                    <td>${activity.username}</td>
+                    <td>${activityBadge}</td>
+                    <td>${activity.description}</td>
+                    <td>${activity.ip_address}</td>
+                    <td title="${activity.user_agent || 'Unknown'}">${userAgent}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function filterActivities() {
+            const filter = document.getElementById('activityFilter').value;
+            const filteredActivities = filter ? allActivities.filter(activity => activity.activity_type === filter) : allActivities;
+            displayActivities(filteredActivities);
+        }
+
+        async function viewUserActivities(userId, username) {
+            try {
+                const authHeaders = getAuthHeaders();
+                if (!authHeaders) return;
+
+                const response = await fetch(`/admin/users/${userId}/activities`, {
+                    headers: authHeaders
+                });
+
+                if (response.ok) {
+                    const userActivities = await response.json();
+
+                    let activitiesText = `Recent activities for ${username}:\n\n`;
+                    userActivities.forEach(activity => {
+                        const timestamp = new Date(activity.created_at).toLocaleString();
+                        activitiesText += `${timestamp} - ${activity.activity_type.toUpperCase()}: ${activity.description} (IP: ${activity.ip_address})\n`;
+                    });
+
+                    if (userActivities.length === 0) {
+                        activitiesText += 'No recent activities found.';
+                    }
+
+                    alert(activitiesText);
+                } else {
+                    alert('Failed to load user activities');
+                }
+            } catch (error) {
+                console.error('Error loading user activities:', error);
+                alert('Error loading user activities');
+            }
+        }
+
+        async function makeAuthenticatedRequest(url, options = {}) {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = '/login.html';
+                return;
+            }
+
+            const response = await fetch(url, {
+                ...options,
+                headers: {
+                    ...options.headers,
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.status === 401 || response.status === 403) {
+                const errorData = await response.json().catch(() => ({}));
+                localStorage.removeItem('token');
+
+                if (errorData.expired || errorData.notActive) {
+                    alert(errorData.message || 'Session expired. Please login again.');
+                } else if (response.status === 403) {
+                    alert('Admin access required.');
+                }
+
+                window.location.href = '/login.html';
+                return;
+            }
+
+            return response;
+        }
+
+        // Load email tracking data for admin
+        async function loadAdminEmailTracking() {
+            try {
+                const response = await fetch('/admin/email-tracking', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    displayAdminTrackingStats(data.stats);
+                    displayAdminTrackingTable(data.trackingData);
+                    document.getElementById('trackingCount').textContent = `Showing ${data.trackingData.length} records`;
+                } else {
+                    console.error('Failed to load email tracking data');
+                    document.getElementById('adminEmailTrackingTable').innerHTML = 
+                        '<tr><td colspan="10">Failed to load tracking data</td></tr>';
+                }
+            } catch (error) {
+                console.error('Error loading email tracking:', error);
+                document.getElementById('adminEmailTrackingTable').innerHTML = 
+                    '<tr><td colspan="10">Error loading tracking data</td></tr>';
+            }
+        }
+
+        // Refresh tracking data
+        function refreshTrackingData() {
+            loadAdminEmailTracking();
+        }
+
+        // Filter tracking data
+        function filterTrackingData() {
+            const filter = document.getElementById('trackingFilter').value;
+            const rows = document.querySelectorAll('#adminEmailTrackingTable tr');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                if (row.cells.length > 1) { // Skip header and loading rows
+                    const status = row.cells[3].textContent.toLowerCase().trim();
+                    const shouldShow = filter === 'all' || status.includes(filter);
+                    row.style.display = shouldShow ? '' : 'none';
+                    if (shouldShow) visibleCount++;
+                }
+            });
+
+            document.getElementById('trackingCount').textContent = `Showing ${visibleCount} records`;
+        }
+
+        // Display admin email tracking table
+        function displayAdminTrackingTable(trackingData) {
+            const tableBody = document.getElementById('adminEmailTrackingTable');
+
+            if (!trackingData || trackingData.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="10">No email tracking data available</td></tr>';
+                return;
+            }
+
+            const rows = trackingData.map(track => {
+                const statusClass = `status-${track.status}`;
+                const sentAt = new Date(track.sent_at).toLocaleString();
+                const openedAt = track.opened_at ? new Date(track.opened_at).toLocaleString() : '-';
+                const ipAddress = track.ip_address || '-';
+                const campaignId = track.campaign_id ? track.campaign_id.substring(0, 12) + '...' : '-';
+
+                return `
+                    <tr>
+                        <td><strong>${track.username}</strong></td>
+                        <td>${track.recipient_email}</td>
+                        <td title="${track.subject}">${track.subject.length > 30 ? track.subject.substring(0, 30) + '...' : track.subject}</td>
+                        <td><span class="status-badge ${statusClass}">${track.status.toUpperCase()}</span></td>
+                        <td>${sentAt}</td>
+                        <td>${openedAt}</td>
+                        <td><strong>${track.open_count}</strong></td>
+                        <td>${track.smtp_name}</td>
+                        <td title="${track.campaign_id}">${campaignId}</td>
+                        <td>${ipAddress}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            tableBody.innerHTML = rows;
+        }
+
+        // Display admin tracking stats
+        function displayAdminTrackingStats(stats) {
+            document.getElementById('adminTotalSent').textContent = stats.totalSent || 0;
+            document.getElementById('adminTotalOpened').textContent = stats.totalOpened || 0;
+            document.getElementById('adminOpenRate').textContent = stats.openRate ? `${stats.openRate}%` : '0%';
+            document.getElementById('adminTotalOpens').textContent = stats.totalOpens || 0;
+            document.getElementById('adminTotalFailed').textContent = stats.totalFailed || 0;
+        }
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>⚡ Spark Sender Admin</h4>
+                <p>Administrative dashboard for managing users, monitoring campaigns, and system analytics.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Admin Tools</h4>
+                <ul>
+                    <li><a href="#">👥 User Management</a></li>
+                    <li><a href="#">📊 System Analytics</a></li>
+                    <li><a href="#">🔧 Configuration</a></li>
+                    <li><a href="#">📈 Performance Monitoring</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>System Info</h4>
+                <ul>
+                    <li>🖥️ Server Status: Online</li>
+                    <li>📡 API Version: v2.0</li>
+                    <li>🔒 Security Level: High</li>
+                    <li>⚙️ System Health: Optimal</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Admin Support</h4>
+                <ul>
+                    <li>📧 sazzad.pages.dev@gmail.com</li>
+                    <li>🛠️ System Documentation</li>
+                    <li>🔧 Technical Support</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">⚡ SPARK SENDER ADMIN</div>
+            <div>
+                <span style="color: #94a3b8;">&copy; 2025 Spark Sender Admin Panel. All rights reserved. | Developed by Pjɗw Sʌzzʌɗ</span>
+            </div>
+            <div class="footer-social">
+                <a href="#" title="Admin Docs">📋</a>
+                <a href="#" title="System Logs">📝</a>
+                <a href="#" title="Admin Support">🆘</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

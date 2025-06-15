@@ -1,0 +1,7 @@
+SMTP_HOST=smtp-ehrytju.alwaysdata.net
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=ehrytju@alwaysdata.net
+SMTP_PASS=DH67@#GHU
+SMTP_FROM_NAME=
+FROM_EMAIL=ehrytju@alwaysdata.net

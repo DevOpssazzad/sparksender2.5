@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark Sender - Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        }
+        .login-card {
+            background: #374151;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .spark-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .spark-logo h1 {
+            color: #3b82f6;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+        .spark-logo .tagline {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .error-message {
+            background-color: #ef4444;
+            color: white;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        .success-message {
+            background-color: #10b981;
+            color: white;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="spark-logo">
+                <h1>⚡ SPARK SENDER</h1>
+                <div class="tagline">Professional Email Marketing Platform</div>
+            </div>
+
+            <div id="errorMessage" class="error-message"></div>
+            <div id="successMessage" class="success-message"></div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label" for="username">Username</label>
+                    <input type="text" id="username" name="username" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-input" required>
+                </div>
+
+                <button type="submit" class="btn btn-blue" style="width: 100%; margin-top: 1rem;">
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const errorDiv = document.getElementById('errorMessage');
+            const successDiv = document.getElementById('successMessage');
+            const formData = new FormData(e.target);
+
+            errorDiv.style.display = 'none';
+            successDiv.style.display = 'none';
+
+            try {
+                const response = await fetch('/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username: formData.get('username'),
+                        password: formData.get('password')
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    console.log('Login successful, storing token:', data.token ? 'Token received' : 'No token');
+                    localStorage.setItem('token', data.token);
+
+                    // Verify token was stored
+                    const storedToken = localStorage.getItem('token');
+                    console.log('Token stored successfully:', storedToken ? 'Yes' : 'No');
+
+                    // Show appropriate message
+                    const message = data.message || 'Login successful! Redirecting...';
+                    successDiv.textContent = message;
+                    successDiv.style.display = 'block';
+
+                    setTimeout(() => {
+                        if (data.is_admin) {
+                            window.location.href = '/admin.html';
+                        } else {
+                            window.location.href = '/index.html';
+                        }
+                    }, 1000);
+                } else {
+                    const errorMessage = data.message || 'Login failed';
+                    errorDiv.textContent = errorMessage;
+                    errorDiv.style.display = 'block';
+                    
+                    // Clear any existing token if login failed due to expiry
+                    if (errorMessage.includes('expired') || errorMessage.includes('not yet active')) {
+                        localStorage.removeItem('token');
+                    }
+                }
+            } catch (error) {
+                errorDiv.textContent = 'Network error. Please try again.';
+                errorDiv.style.display = 'block';
+            }
+        });
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>⚡ Spark Sender</h4>
+                <p>Secure login to your email campaign management platform. Experience powerful email marketing with advanced analytics.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Get Started</h4>
+                <ul>
+                    <li><a href="#">🚀 Quick Start Guide</a></li>
+                    <li><a href="#">📧 Email Templates</a></li>
+                    <li><a href="#">📊 Campaign Examples</a></li>
+                    <li><a href="#">💡 Tips & Tricks</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Security</h4>
+                <ul>
+                    <li>🔒 Encrypted Connections</li>
+                    <li>🛡️ Secure Authentication</li>
+                    <li>📱 Two-Factor Support</li>
+                    <li>🔐 Data Protection</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Need Help?</h4>
+                <ul>
+                    <li>📧 support@spangrove.com</li>
+                    <li>❓ Forgot Password?</li>
+                    <li>📞 Contact Support</li>
+                    <li>📚 User Guide</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">⚡ SPARK SENDER</div>
+            <div>
+                <span style="color: #94a3b8;">&copy; 2025 Spark Sender. Secure email campaigns made simple. | Developed by Pjɗw Sʌzzʌɗ</span>
+            </div>
+            <div class="footer-social">
+                <a href="#" title="Help">❓</a>
+                <a href="#" title="Security">🔒</a>
+                <a href="#" title="Contact">📞</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
