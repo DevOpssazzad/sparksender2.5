@@ -288,27 +288,41 @@
 
 
     <script>
-        document.getElementById('emailForm').addEventListener('submit', async (event) => {
+        // Handle form submission to interact with backend
+        document.querySelector('form').addEventListener('submit', async (event) => {
             event.preventDefault();
+            
             const formData = new FormData(event.target);
-            const response = await fetch('/send-email', {
-                method: 'POST',
-                body: formData
-            });
+            const logDiv = document.getElementById('log');
+            
+            // Clear previous logs and show starting message
+            logDiv.textContent = '🚀 Starting email campaign...\n';
+            
+            try {
+                const response = await fetch('/send-email', {
+                    method: 'POST',
+                    body: formData
+                });
 
-            const reader = response.body.getReader();
-            const decoder = new TextDecoder('utf-8');
-            let result = '';
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
 
-            while (true) {
-                const { done, value } = await reader.read();
-                if (done) break;
-                result += decoder.decode(value, { stream: true });
-                document.getElementById('log').textContent = result;
+                const result = await response.json();
+                logDiv.textContent += `\n✅ ${result.message}\n📊 ${result.summary}\n`;
+                
+                if (result.duration) {
+                    logDiv.textContent += `⏱️ Duration: ${result.duration} seconds\n`;
+                }
+                
+                if (result.success_rate) {
+                    logDiv.textContent += `📈 Success Rate: ${result.success_rate}\n`;
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                logDiv.textContent += `\n❌ Error: ${error.message}\n`;
             }
-
-            const finalResult = JSON.parse(result);
-            document.getElementById('log').textContent += `\n${finalResult.message}\n${finalResult.summary}`;
         });
     </script>
 
