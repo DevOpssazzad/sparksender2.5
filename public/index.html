@@ -236,6 +236,16 @@
                   const logDiv = document.getElementById('log');
                   logDiv.textContent += message + '\n';
                   logDiv.scrollTop = logDiv.scrollHeight; // Scroll to the latest log
+                  
+                  // Show batch progress in progress bar
+                  if (message.includes('⚡ Batch') && message.includes('completed')) {
+                    const progressDiv = document.getElementById('batchProgress');
+                    const progressContainer = document.getElementById('progressContainer');
+                    if (progressDiv && progressContainer) {
+                      progressDiv.textContent = message;
+                      progressContainer.style.display = 'flex';
+                    }
+                  }
                 };
 
                 // WebSocket connection open/close logging
@@ -326,7 +336,19 @@
                 });
             </script>
 
-            <button type="submit">Send Email</button>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <button type="submit">Send Email</button>
+                <div id="progressContainer" style="display: none; flex: 1;">
+                    <div style="background: #1a1a1a; border: 1px solid #444; border-radius: 5px; padding: 8px; min-width: 300px;">
+                        <div style="color: #00ff00; font-family: 'Courier New', monospace; font-size: 11px; font-weight: bold;">
+                            Progress:
+                        </div>
+                        <div id="batchProgress" style="color: #fff; font-family: 'Courier New', monospace; font-size: 10px; margin-top: 4px;">
+                            Waiting for campaign to start...
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
     </div> <!-- End main-content -->
@@ -445,6 +467,14 @@
             // Clear previous logs and show starting message
             logDiv.textContent = '🚀 Starting email campaign...\n';
             
+            // Show progress container and reset progress
+            const progressContainer = document.getElementById('progressContainer');
+            const progressDiv = document.getElementById('batchProgress');
+            if (progressContainer && progressDiv) {
+                progressContainer.style.display = 'flex';
+                progressDiv.textContent = 'Campaign starting...';
+            }
+            
             try {
                 const response = await fetch('/send-email', {
                     method: 'POST',
@@ -478,9 +508,23 @@
                     logDiv.textContent += `📈 Success Rate: ${result.success_rate}\n`;
                 }
                 
+                // Hide progress container when campaign finishes
+                const progressContainer = document.getElementById('progressContainer');
+                if (progressContainer) {
+                    setTimeout(() => {
+                        progressContainer.style.display = 'none';
+                    }, 3000); // Hide after 3 seconds
+                }
+                
             } catch (error) {
                 console.error('Error:', error);
                 logDiv.textContent += `\n❌ Error: ${error.message}\n`;
+                
+                // Hide progress container on error
+                const progressContainer = document.getElementById('progressContainer');
+                if (progressContainer) {
+                    progressContainer.style.display = 'none';
+                }
             }
         });
     </script>
