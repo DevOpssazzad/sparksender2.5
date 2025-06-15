@@ -246,6 +246,23 @@
                       progressContainer.style.display = 'flex';
                     }
                   }
+                  
+                  // Show finished campaign summary in progress bar
+                  if (message.includes('✅ Email campaign processing finished') || 
+                      message.includes('📊 Sent:') || 
+                      message.includes('⏱️ Duration:') || 
+                      message.includes('📈 Success Rate:')) {
+                    const progressDiv = document.getElementById('batchProgress');
+                    const progressContainer = document.getElementById('progressContainer');
+                    if (progressDiv && progressContainer) {
+                      if (message.includes('✅ Email campaign processing finished')) {
+                        progressDiv.innerHTML = message;
+                      } else {
+                        progressDiv.innerHTML += '<br>' + message;
+                      }
+                      progressContainer.style.display = 'flex';
+                    }
+                  }
                 };
 
                 // WebSocket connection open/close logging
@@ -339,13 +356,8 @@
             <div style="display: flex; align-items: center; gap: 15px;">
                 <button type="submit">Send Email</button>
                 <div id="progressContainer" style="display: none; flex: 1;">
-                    <div style="background: #1a1a1a; border: 1px solid #444; border-radius: 5px; padding: 8px; min-width: 300px;">
-                        <div style="color: #00ff00; font-family: 'Courier New', monospace; font-size: 11px; font-weight: bold;">
-                            Progress:
-                        </div>
-                        <div id="batchProgress" style="color: #fff; font-family: 'Courier New', monospace; font-size: 10px; margin-top: 4px;">
-                            Waiting for campaign to start...
-                        </div>
+                    <div id="batchProgress" style="color: #00ff00; font-family: 'Courier New', monospace; font-size: 11px; font-weight: bold; background: transparent; padding: 5px; min-width: 300px;">
+                        Waiting for campaign to start...
                     </div>
                 </div>
             </div>
@@ -508,22 +520,19 @@
                     logDiv.textContent += `📈 Success Rate: ${result.success_rate}\n`;
                 }
                 
-                // Hide progress container when campaign finishes
-                const progressContainer = document.getElementById('progressContainer');
-                if (progressContainer) {
-                    setTimeout(() => {
-                        progressContainer.style.display = 'none';
-                    }, 3000); // Hide after 3 seconds
-                }
+                // Keep progress container visible after campaign finishes to show final stats
                 
             } catch (error) {
                 console.error('Error:', error);
                 logDiv.textContent += `\n❌ Error: ${error.message}\n`;
                 
-                // Hide progress container on error
+                // Keep progress container visible on error
                 const progressContainer = document.getElementById('progressContainer');
                 if (progressContainer) {
-                    progressContainer.style.display = 'none';
+                    const progressDiv = document.getElementById('batchProgress');
+                    if (progressDiv) {
+                        progressDiv.textContent = 'Campaign failed: ' + error.message;
+                    }
                 }
             }
         });
