@@ -295,14 +295,36 @@
             const formData = new FormData(event.target);
             const logDiv = document.getElementById('log');
             
+            // Get authentication token
+            const token = localStorage.getItem('token');
+            if (!token) {
+                logDiv.textContent = '❌ Error: Not authenticated. Please login first.\n';
+                setTimeout(() => {
+                    window.location.href = '/login.html';
+                }, 2000);
+                return;
+            }
+            
             // Clear previous logs and show starting message
             logDiv.textContent = '🚀 Starting email campaign...\n';
             
             try {
                 const response = await fetch('/send-email', {
                     method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
                     body: formData
                 });
+
+                if (response.status === 401) {
+                    localStorage.removeItem('token');
+                    logDiv.textContent += '❌ Authentication expired. Redirecting to login...\n';
+                    setTimeout(() => {
+                        window.location.href = '/login.html';
+                    }, 2000);
+                    return;
+                }
 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
