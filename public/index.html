@@ -97,9 +97,7 @@
             border-radius: 5px;
             max-height: 120px;
             overflow-y: auto;
-        } 
-        
-        #log {
+        } #log {
             white-space: pre-wrap;
             font-family: monospace;
             background: #222;
@@ -107,50 +105,20 @@
             padding: 2px;
             height: 200px;
             overflow-y: scroll;
-            border: 1px solid #444;
-            border-radius: 5px;
         }
 
-        .send-button-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .progress-log-container {
-            flex: 1;
-            max-width: 400px;
-        }
-
-        .progress-log-container h4 {
-            margin: 0 0 5px 0;
-            color: #fff;
-            font-size: 12px;
-        }
-
-        #progressLog {
-            white-space: pre-wrap;
-            font-family: monospace;
-            background: #222;
-            color: #0f0;
-            padding: 10px;
-            height: 150px;
-            overflow-y: auto;
-            border: 1px solid #444;
-            border-radius: 5px;
-            font-size: 10px;
-            line-height: 1.2;
-        }
     </style>
 </head>
 <body>
 
     <h2>Send Email</h2>
 
-    <form id="emailForm" action="/send-email" method="POST" enctype="multipart/form-data">
+    <form action="/send-email" method="POST" enctype="multipart/form-data">
         <!-- Left Column -->
+
+
         <div class="column">
+
               <div class="form-row">
                 <label>From Name:</label>
                 <div class="input-group">
@@ -186,43 +154,26 @@
 
                 // Handle incoming messages
                 ws.onmessage = (event) => {
-                  try {
-                    const data = JSON.parse(event.data);
-                    const message = data.message;
-                    const logDiv = document.getElementById('log');
-                    
-                    // Also update progress log if it contains batch info
-                    if (message.includes('⚡ Batch') && message.includes('completed')) {
-                      const progressLogDiv = document.getElementById('progressLog');
-                      if (progressLogDiv) {
-                        progressLogDiv.textContent += message + '\n';
-                        progressLogDiv.scrollTop = progressLogDiv.scrollHeight;
-                      }
-                    }
-                    
-                    logDiv.textContent += message + '\n';
-                    logDiv.scrollTop = logDiv.scrollHeight; // Scroll to the latest log
-                  } catch (e) {
-                    // Fallback for non-JSON messages
-                    const logDiv = document.getElementById('log');
-                    logDiv.textContent += event.data + '\n';
-                    logDiv.scrollTop = logDiv.scrollHeight;
-                  }
+                  const message = event.data;
+                  const logDiv = document.getElementById('log');
+                  logDiv.textContent += message + '\n';
+                  logDiv.scrollTop = logDiv.scrollHeight; // Scroll to the latest log
                 };
 
                 // WebSocket connection open/close logging
                 ws.onopen = () => {
-                  console.log('📡 Connected to WebSocket server');
+                  console.log('Connected to WebSocket server');
                 };
 
                 ws.onclose = () => {
-                  console.log('❌ Disconnected from WebSocket server');
+                  console.log('Disconnected from WebSocket server');
                 };
               </script>
         </div>
 
-        <!-- Right Column -->
+        <!-- Right Column (unchanged) -->
         <div class="column">
+
             <label>Body HTML Content:</label>
             <textarea name="bodyHtml" rows="5" required placeholder="Enter body HTML content"></textarea>
 
@@ -242,6 +193,12 @@
             style="flex-grow: 1; padding: 2px; border: 2px solid #ccc; border-radius: 5px; width: 100%;">
     </div>
 </div>
+
+
+
+
+
+
 
             <br>
             <label>Attachment HTML Content:</label>
@@ -291,14 +248,7 @@
                 });
             </script>
 
-            <!-- Send Button and Progress Log Container -->
-            <div class="send-button-container">
-                <button type="submit">Send Email</button>
-                <div class="progress-log-container">
-                    <h4>⚡ Progress Log</h4>
-                    <div id="progressLog">Waiting for email campaign to start...</div>
-                </div>
-            </div>
+            <button type="submit">Send Email</button>
         </div>
     </form>
 
@@ -334,35 +284,31 @@
 
         // Attach event listener to the "Preview Attachment" button
         document.getElementById('previewButton').addEventListener('click', previewAttachment);
-        
-        // Handle form submission
+    </script>
+
+
+    <script>
         document.getElementById('emailForm').addEventListener('submit', async (event) => {
             event.preventDefault();
-            
-            const progressLog = document.getElementById('progressLog');
-            progressLog.textContent = 'Starting email campaign...\n';
-            
             const formData = new FormData(event.target);
-            
-            try {
-                const response = await fetch('/send-email', {
-                    method: 'POST',
-                    body: formData
-                });
+            const response = await fetch('/send-email', {
+                method: 'POST',
+                body: formData
+            });
 
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder('utf-8');
+            let result = '';
 
-                const result = await response.json();
-                progressLog.textContent += `\n✅ Campaign completed!\n${result.message}\n${result.summary}\n`;
-                progressLog.scrollTop = progressLog.scrollHeight;
-                
-            } catch (error) {
-                console.error('Error:', error);
-                progressLog.textContent += `\n❌ Error: ${error.message}\n`;
-                progressLog.scrollTop = progressLog.scrollHeight;
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+                result += decoder.decode(value, { stream: true });
+                document.getElementById('log').textContent = result;
             }
+
+            const finalResult = JSON.parse(result);
+            document.getElementById('log').textContent += `\n${finalResult.message}\n${finalResult.summary}`;
         });
     </script>
 
