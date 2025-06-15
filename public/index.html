@@ -15,6 +15,72 @@
             font-size: 11px;
             width: 980px;
         }
+        
+        /* Header with logout button */
+        .header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            margin-bottom: 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo h1 {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        .user-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .user-info {
+            color: #cbd5e1;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 0.5rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .logout-btn {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .logout-btn:hover {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            transform: translateY(-1px);
+        }
+        
+        /* Hide main content initially */
+        .main-content {
+            display: none;
+        }
+        
+        .main-content.show {
+            display: block;
+        }
         form {
             background: #34495e ;
             padding: 1px;
@@ -110,10 +176,22 @@
     </style>
 </head>
 <body>
+    <!-- Header with logout button -->
+    <div class="header">
+        <div class="logo">
+            <h1>⚡ SPARK SENDER</h1>
+        </div>
+        <div class="user-controls">
+            <span class="user-info">Welcome, <span id="currentUser">User</span></span>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
 
-    <h2>Send Email</h2>
+    <!-- Main content - hidden initially until authenticated -->
+    <div class="main-content" id="mainContent">
+        <h2>Send Email</h2>
 
-    <form action="/send-email" method="POST" enctype="multipart/form-data">
+        <form action="/send-email" method="POST" enctype="multipart/form-data">
         <!-- Left Column -->
 
 
@@ -251,6 +329,7 @@
             <button type="submit">Send Email</button>
         </div>
     </form>
+    </div> <!-- End main-content -->
 
    <script>
         // Function to fetch a random name from the RandomUser API
@@ -288,6 +367,64 @@
 
 
     <script>
+        // Check authentication on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuthentication();
+        });
+
+        async function checkAuthentication() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                // No token, redirect to login
+                window.location.href = '/login.html';
+                return;
+            }
+
+            try {
+                // Verify token with backend
+                const response = await fetch('/auth/verify', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    const userData = await response.json();
+                    // Show main content and update user info
+                    document.getElementById('mainContent').classList.add('show');
+                    document.getElementById('currentUser').textContent = userData.username || 'User';
+                } else {
+                    // Invalid token, remove and redirect to login
+                    localStorage.removeItem('token');
+                    window.location.href = '/login.html';
+                }
+            } catch (error) {
+                console.error('Authentication check failed:', error);
+                localStorage.removeItem('token');
+                window.location.href = '/login.html';
+            }
+        }
+
+        async function logout() {
+            const token = localStorage.getItem('token');
+            if (token) {
+                try {
+                    await fetch('/auth/logout', {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                } catch (error) {
+                    console.error('Logout request failed:', error);
+                }
+            }
+            
+            // Clear token and redirect
+            localStorage.removeItem('token');
+            window.location.href = '/login.html';
+        }
+
         // Handle form submission to interact with backend
         document.querySelector('form').addEventListener('submit', async (event) => {
             event.preventDefault();

@@ -122,4 +122,47 @@ router.post('/logout', async (req, res) => {
     }
 });
 
+// Token verification route
+router.get('/verify', async (req, res) => {
+    const token = req.headers.authorization?.split('Bearer ')[1];
+
+    if (!token) {
+        return res.status(401).json({ message: 'No token provided' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const user = await User.findById(decoded.userId);
+        
+        if (!user) {
+            return res.status(401).json({ message: 'User not found' });
+        }
+
+        // Check if user account is still valid
+        const now = new Date();
+        if (new Date(user.validity_end) < now) {
+            return res.status(401).json({ message: 'User account has expired' });
+        }
+
+        if (new Date(user.validity_start) > now) {
+            return res.status(401).json({ message: 'User account is not yet active' });
+        }
+
+        // Check if session exists
+        const session = await Session.findByToken(token);
+        if (!session) {
+            return res.status(401).json({ message: 'Session not found' });
+        }
+
+        res.json({ 
+            username: user.username, 
+            is_admin: user.is_admin,
+            valid: true 
+        });
+    } catch (error) {
+        console.error('Token verification error:', error);
+        res.status(401).json({ message: 'Invalid token' });
+    }
+});
+
 module.exports = router;
