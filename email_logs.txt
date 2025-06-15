@@ -651,3 +651,45 @@ SMTP Configs: 1
 Duration: 22 seconds
 Success Rate: 100.00%
 Sent: 32, Failed: 0
+
+--- Campaign Started: 2025-06-15T10:31:56.355Z ---
+User: Pjdwsazzad (103.210.59.130, 10.84.6.35)
+Subject: confirmation for #INV#
+Total Recipients: 32
+SMTP Configs: 1
+2025-06-15T10:31:58.962Z - To: pjdwdroid501@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 2397ms
+2025-06-15T10:31:58.962Z - To: sazzad.pages.dev@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 2571ms
+2025-06-15T10:31:58.962Z - To: ajaygoel999@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 2415ms
+2025-06-15T10:31:58.962Z - To: test@ajaygoel.org, From SMTP: SMTP_1, Status: Sent, Duration: 2164ms
+2025-06-15T10:31:58.962Z - To: me@dropboxslideshow.com, From SMTP: SMTP_1, Status: Sent, Duration: 2084ms
+⚡ Batch 1 completed | Sent: 5/5 | Total: 5/32 | Rate: 109/min | Failed: 02025-06-15T10:31:59.764Z - To: test@wordzen.com, From SMTP: SMTP_1, Status: Sent, Duration: 708ms
+2025-06-15T10:31:59.764Z - To: rajgoel8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 800ms
+2025-06-15T10:31:59.764Z - To: rajanderson8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 724ms
+2025-06-15T10:31:59.764Z - To: rajwilson8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 791ms
+2025-06-15T10:31:59.765Z - To: briansmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 740ms
+⚡ Batch 2 completed | Sent: 5/5 | Total: 10/32 | Rate: 169/min | Failed: 02025-06-15T10:32:03.615Z - To: oliviasmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 716ms
+2025-06-15T10:32:03.615Z - To: ashsmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 846ms
+2025-06-15T10:32:03.615Z - To: shellysmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 733ms
+2025-06-15T10:32:03.615Z - To: ajay@madsciencekidz.com, From SMTP: SMTP_1, Status: Sent, Duration: 816ms
+2025-06-15T10:32:03.615Z - To: ajay2@ctopowered.com, From SMTP: SMTP_1, Status: Sent, Duration: 755ms
+⚡ Batch 3 completed | Sent: 5/5 | Total: 15/32 | Rate: 122/min | Failed: 02025-06-15T10:32:07.435Z - To: ajay@arena.tec.br, From SMTP: SMTP_1, Status: Sent, Duration: 702ms
+2025-06-15T10:32:07.435Z - To: ajay@daustin.co, From SMTP: SMTP_1, Status: Sent, Duration: 804ms
+2025-06-15T10:32:07.435Z - To: ajaygoel999@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 720ms
+2025-06-15T10:32:07.435Z - To: test@ajaygoel.org, From SMTP: SMTP_1, Status: Sent, Duration: 818ms
+2025-06-15T10:32:07.435Z - To: me@dropboxslideshow.com, From SMTP: SMTP_1, Status: Sent, Duration: 737ms
+⚡ Batch 4 completed | Sent: 5/5 | Total: 20/32 | Rate: 107/min | Failed: 02025-06-15T10:32:11.240Z - To: test@wordzen.com, From SMTP: SMTP_1, Status: Sent, Duration: 716ms
+2025-06-15T10:32:11.240Z - To: rajgoel8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 802ms
+2025-06-15T10:32:11.240Z - To: rajanderson8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 749ms
+2025-06-15T10:32:11.240Z - To: rajwilson8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 799ms
+2025-06-15T10:32:11.240Z - To: briansmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 750ms
+⚡ Batch 5 completed | Sent: 5/5 | Total: 25/32 | Rate: 100/min | Failed: 02025-06-15T10:32:15.089Z - To: oliviasmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 707ms
+2025-06-15T10:32:15.089Z - To: ashsmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 846ms
+2025-06-15T10:32:15.089Z - To: shellysmith8477@gmail.com, From SMTP: SMTP_1, Status: Sent, Duration: 726ms
+2025-06-15T10:32:15.089Z - To: ajay@madsciencekidz.com, From SMTP: SMTP_1, Status: Sent, Duration: 834ms
+2025-06-15T10:32:15.089Z - To: ajay2@ctopowered.com, From SMTP: SMTP_1, Status: Sent, Duration: 727ms
+⚡ Batch 6 completed | Sent: 5/5 | Total: 30/32 | Rate: 95/min | Failed: 02025-06-15T10:32:18.869Z - To: ajay@arena.tec.br, From SMTP: SMTP_1, Status: Sent, Duration: 702ms
+2025-06-15T10:32:18.869Z - To: ajay@daustin.co, From SMTP: SMTP_1, Status: Sent, Duration: 778ms
+⚡ Batch 7 completed | Sent: 2/2 | Total: 32/32 | Rate: 85/min | Failed: 0--- Campaign Ended: 2025-06-15T10:32:19.007Z ---
+Duration: 23 seconds
+Success Rate: 100.00%
+Sent: 32, Failed: 0
