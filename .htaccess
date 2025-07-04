@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# ✅ Only allow request with the correct x-api-key
+RewriteCond %{HTTP:X-API-KEY} !=d1c8e6a0b2f04d3ab9fbd2c372eb84f2957ff34d31bb934962ea3c7cbd4f6e0a
+RewriteRule .* - [F]
+</IfModule>
+
+<Files "*">
+  Order Allow,Deny
+  Allow from all
+</Files>
